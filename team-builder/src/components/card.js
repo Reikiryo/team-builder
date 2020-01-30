@@ -12,24 +12,24 @@ const Button = styled.button`
     background-color: black;
     color: white;
 `
-const Card = ({ member,editMember }) => {
+const Card = ({ member, editMember }) => {
     const roleSet = role => {
         if (role === '1') {
             return 'UI Dev'
         } else if (role === '2') {
             return 'FE Dev'
         } else if (role === '3') {
-            return 'Backend Dev'
+            return 'BE Dev'
         }
     }
-    return (  
+    return (
         <CardDiv>
             <h3>{member.name}</h3>
             <h3>{member.email}</h3>
             <h4 id='h4'>{roleSet(member.role)}</h4>
-            <Button onClick={e => {editMember(member)}}>Edit</Button>
+            <Button onClick={e => { editMember(member) }}>Edit</Button>
         </CardDiv>
     );
 }
- 
+
 export default Card;

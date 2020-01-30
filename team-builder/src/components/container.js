@@ -9,18 +9,25 @@ const Cont = styled.div`
 	flex-direction: row;
 	flex-wrap: wrap;
 `
-const Container = ({ team,addMember,editMember,memberToEdit,changeMember }) => {
+const Container = ({ team, addMember, editMember, memberToEdit, changeMember }) => {
 
-    return (
+	return (
 		<div>
-			<Form changeMember={changeMember} memberToEdit={memberToEdit} team={team} addMember={addMember}/>
+			<Form
+				changeMember={changeMember}
+				memberToEdit={memberToEdit}
+				team={team}
+				addMember={addMember} />
 			<Cont>
-			{team.map(member => (
-				<Card editMember={editMember} key={member.id} member={member}/>
-			))}
+				{team.map(member => (
+					<Card
+						editMember={editMember}
+						key={member.id}
+						member={member} />
+				))}
 			</Cont>
 		</div>
-    );
+	);
 }
- 
+
 export default Container;
