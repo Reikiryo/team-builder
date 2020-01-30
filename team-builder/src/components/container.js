@@ -9,7 +9,7 @@ const Cont = styled.div`
 	flex-direction: row;
 	flex-wrap: wrap;
 `
-const Container = ({ team, addMember, editMember, memberToEdit, changeMember }) => {
+const Container = ({ team, addMember, editMember, memberToEdit, changeMember, deleteMember }) => {
 
 	return (
 		<div>
@@ -21,6 +21,7 @@ const Container = ({ team, addMember, editMember, memberToEdit, changeMember }) 
 			<Cont>
 				{team.map(member => (
 					<Card
+						deleteMember={deleteMember}
 						editMember={editMember}
 						key={member.id}
 						member={member} />

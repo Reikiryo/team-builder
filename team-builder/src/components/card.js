@@ -12,7 +12,11 @@ const Button = styled.button`
     background-color: black;
     color: white;
 `
-const Card = ({ member, editMember }) => {
+const X = styled.button`
+    background-color: red;
+    margin-left: 90%;
+`
+const Card = ({ member, editMember, deleteMember }) => {
     const roleSet = role => {
         if (role === '1') {
             return 'UI Dev'
@@ -20,10 +24,13 @@ const Card = ({ member, editMember }) => {
             return 'FE Dev'
         } else if (role === '3') {
             return 'BE Dev'
+        } else if (role === '4') {
+            return 'FS Dev'
         }
     }
     return (
         <CardDiv>
+            <X onClick={e => { deleteMember(member) }} >X</X>
             <h3>{member.name}</h3>
             <h3>{member.email}</h3>
             <h4 id='h4'>{roleSet(member.role)}</h4>

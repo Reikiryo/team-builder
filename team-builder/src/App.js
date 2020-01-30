@@ -34,11 +34,21 @@ function App() {
     }
     setTeam([...team, newMember])
   }
+  const deleteMember = member => {
+    const arr = [...team]
+    arr.splice(member.id, 1)
+    arr.forEach(member => {
+      member.id = member.key
+    })
+    console.log(arr)
+    setTeam(arr)
+  }
   return (
     <div className="App">
       <Container
         changeMember={changeMember}
         editMember={editMember}
+        deleteMember={deleteMember}
         memberToEdit={memberToEdit}
         team={team}
         addMember={addMember} />

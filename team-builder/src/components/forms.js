@@ -29,7 +29,6 @@ const Form = ({ addMember, memberToEdit, changeMember }) => {
     return (
         <div>
             <form onSubmit={submitForm}>
-
                 <input
                     onChange={handleChanges}
                     name='name' value={member.name}
@@ -46,6 +45,7 @@ const Form = ({ addMember, memberToEdit, changeMember }) => {
                     <option value='1' >User Interface Dev</option>
                     <option value='2' >Front End Dev</option>
                     <option value='3' >Back End Dev</option>
+                    <option value='4' >Full Stack Dev</option>
                 </select>
 
                 <input type='submit' />
