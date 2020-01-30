@@ -1,8 +1,19 @@
 import React from 'react';
+import styled from 'styled-components'
 
-const Card = ({ member }) => {
+const CardDiv = styled.div`
+    width: 30%;
+    margin: 2%;
+    padding: 2%;
+    border: 1px solid black;
+`
+const Button = styled.button`
+    width: 20%;
+    background-color: black;
+    color: white;
+`
+const Card = ({ member,editMember }) => {
     const roleSet = role => {
-        //const h4 = document.querySelector('#h4')
         if (role === '1') {
             return 'UI Dev'
         } else if (role === '2') {
@@ -10,14 +21,14 @@ const Card = ({ member }) => {
         } else if (role === '3') {
             return 'Backend Dev'
         }
-        console.log('HELLOWORLD')
     }
     return (  
-        <div>
+        <CardDiv>
             <h3>{member.name}</h3>
             <h3>{member.email}</h3>
-            <h4 id='h4'>{roleSet}</h4>
-        </div>
+            <h4 id='h4'>{roleSet(member.role)}</h4>
+            <Button onClick={e => {editMember(member)}}>Edit</Button>
+        </CardDiv>
     );
 }
  
