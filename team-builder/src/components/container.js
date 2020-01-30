@@ -3,13 +3,14 @@ import Form from './forms'
 import Card from './card'
 import styled from 'styled-components'
 
-const Cont = styled.div`
-	background-color: #e6f7ff;
+
+const Container = ({ color }) => {
+	const Cont = styled.div`
+	background-color: ${color};
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 `
-const Container = () => {
 	const [team, setTeam] = useState([
 		{ id: 0, name: "Josiah Bailey", email: "josiahbailey101@yahoo.com", role: "2" }
 	  ])
@@ -40,11 +41,12 @@ const Container = () => {
 	  }
 	  const deleteMember = member => {
 		const arr = [...team]
+		let count = 0
 		arr.splice(member.id, 1)
 		arr.forEach(member => {
-		  member.id = member.key
+		  member.id = count
+		  count++
 		})
-		console.log(arr)
 		setTeam(arr)
 	  }
 
