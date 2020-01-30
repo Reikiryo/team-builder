@@ -9,7 +9,6 @@ function App() {
   const [team, setTeam] = useState([
     { id: 0, name: "Josiah Bailey", email: "josiahbailey101@yahoo.com", role: "2" }
   ])
-  //const [tempTeam, setTemp] = usestate([])
   const [memberToEdit, setEdit] = useState()
 
   const editMember = member => {
@@ -22,10 +21,8 @@ function App() {
       email: member.email,
       role: member.role
     }
-    //setTemp(newMember)
     const arr = [...team]
     arr[newMember.id] = newMember
-    console.log(arr)
     setTeam(arr)
   }
   const addMember = member => {
