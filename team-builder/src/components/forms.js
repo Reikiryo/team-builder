@@ -29,7 +29,7 @@ const Form = ({ addMember, memberToEdit, changeMember }) => {
     return (
         <div>
             <label>
-            New Member
+                New Member
                 <form onSubmit={submitForm}>
                     <input
                         onChange={handleChanges}
