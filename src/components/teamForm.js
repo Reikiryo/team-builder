@@ -23,10 +23,23 @@ const TeamForm = ({ addTeam }) => {
             <label>
                 New Team
             <form onSubmit={submitForm}>
-                    <input onChange={handleChanges} value={team.name} name='name' id='team' type='text' placeholder='team name' />
+                    <input
+                        onChange={handleChanges}
+                        value={team.name}
+                        name='name'
+                        id='team'
+                        type='text'
+                        placeholder='team name' />
                     <label htmlFor='color' > Color </label>
-                    <input value={team.color} id='color' name='color' onChange={handleChanges} type='color' />
-                    <input name='Submit' type='submit' />
+                    <input
+                        value={team.color}
+                        id='color'
+                        name='color'
+                        onChange={handleChanges}
+                        type='color' />
+                    <input
+                        name='Submit'
+                        type='submit' />
                 </form>
             </label>
         </FormDiv>
