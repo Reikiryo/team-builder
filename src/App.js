@@ -14,7 +14,7 @@ function App() {
   const [teams, setTeams] = useState([
     {
       id: 0,
-      name: 'team1',
+      name: 'Team Name',
       color: '#e6f7ff'
     }
   ])
@@ -38,19 +38,19 @@ function App() {
   }
   let count = -1
 
-  // <TeamDiv>
-  //     {teams.map(team => {
-  //       count++
-  //       return <TeamButton id={count} key={count} color={team.color} team={team} />
-  //     })}
-  //     </TeamDiv>
   return (
     <div className="App">
       <TeamForm addTeam={addTeam} />
-      
+
       {teams.map(team => {
         count++
-        return <Container Team={team} name={team.name} deleteTeam={deleteTeam} id={count} color={team.color} key={count} />
+        return <Container
+          Team={team}
+          name={team.name}
+          deleteTeam={deleteTeam}
+          id={count}
+          color={team.color}
+          key={count} />
       })}
     </div>
   );

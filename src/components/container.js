@@ -4,9 +4,7 @@ import Card from './card'
 import styled from 'styled-components'
 
 
-const Container = ({ Team, color, deleteTeam, id, name }) => {
-	const [visible, setVisible] = useState('none')
-	//if (id > )
+const Container = ({ Team, color, deleteTeam, name }) => {
 	const Cont = styled.div`
 	background-color: ${color};
 	display: flex;
@@ -19,7 +17,7 @@ const Container = ({ Team, color, deleteTeam, id, name }) => {
 	height: 2%;
 `
 	const [team, setTeam] = useState([
-		{ id: 0, name: "Josiah Bailey", email: "josiahbailey101@yahoo.com", role: "2" }
+		{ id: 0, name: "Team Member", email: "MemberEmail@gmail.com", role: "1" }
 	])
 	const [memberToEdit, setEdit] = useState()
 
@@ -65,8 +63,8 @@ const Container = ({ Team, color, deleteTeam, id, name }) => {
 				team={team}
 				addMember={addMember} />
 			<Cont>
-			<h1>{name}</h1>
-			<X onClick={e => {deleteTeam(Team)}}>X</X>
+				<h1>{name}</h1>
+				<X onClick={e => { deleteTeam(Team) }}>X</X>
 				{team.map(member => (
 					<Card
 						deleteMember={deleteMember}
