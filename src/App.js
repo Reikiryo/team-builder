@@ -15,7 +15,7 @@ function App() {
     {
       id: 0,
       name: 'Team Name',
-      color: '#e6f7ff'
+      color: '#3366FF'
     }
   ])
   const addTeam = team => {
