@@ -8,12 +8,12 @@ const FormDiv = styled.div`
 const TeamForm = ({ addTeam }) => {
     const [team, setTeam] = useState({
         name: '',
-        color: '#e6f7ff'
+        color: '#3366FF'
     })
     const submitForm = e => {
         e.preventDefault()
         addTeam(team)
-        setTeam({ name: '', color: '#e6f7ff' })
+        setTeam({ name: '', color: '#3366FF' })
     }
     const handleChanges = e => {
         setTeam({ ...team, [e.target.name]: e.target.value })
